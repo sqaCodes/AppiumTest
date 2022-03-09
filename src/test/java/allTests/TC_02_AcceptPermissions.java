@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class AcceptPermissions extends SetCapabilitiesForTests{
+public class TC_02_AcceptPermissions extends TC_01_OpenAppTest{
     //Accepting the Record & Photo Capture Permission
     @Test
     public void capturePhotoAndVideo(){

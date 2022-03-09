@@ -2,11 +2,14 @@ package allTests;
 
 import appPermissions.AccessLocalStorageMediaPermission;
 import appPermissions.PhotoAndRecordPermission;
+import cameraScreen.VerifyCameraScreen;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import scopeSelection.RifleScope;
+import scopeSelection.SpottingScopeBinoculars;
 
 import java.net.URL;
 
@@ -14,6 +17,9 @@ public class SetCapabilitiesForTests {
 
     protected PhotoAndRecordPermission appPermission;
     protected AccessLocalStorageMediaPermission accessMedia;
+    protected SpottingScopeBinoculars binocular ;
+    protected RifleScope rifleScope;
+    protected VerifyCameraScreen verifyCameraScreen;
 
     public AppiumDriver driver;
     DesiredCapabilities cap = new DesiredCapabilities();
@@ -43,7 +49,11 @@ public class SetCapabilitiesForTests {
         }
         appPermission = new PhotoAndRecordPermission(driver);
         accessMedia = new AccessLocalStorageMediaPermission(driver);
+        rifleScope = new RifleScope(driver);
+        binocular = new SpottingScopeBinoculars(driver);
+        verifyCameraScreen = new VerifyCameraScreen(driver);
     }
+
     @AfterClass
     public void quit() throws Exception{
 //        if (driver != null){
