@@ -1,7 +1,7 @@
 # AppiumTest
-###Appium Android Test on Real Device 
+### Appium Android Test on Real Device 
 
-##Prerequisite
+## Prerequisite
 1. Appium Desktop Client
 2. Appium Inspector
 3. Intellij Editor
@@ -10,4 +10,4 @@
 6. Selenium
 7. TestNG
 
-##Installation Guide
+## Installation Guide
