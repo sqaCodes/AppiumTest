@@ -2,7 +2,7 @@ package allTests;
 
 import org.testng.annotations.Test;
 
-public class TC_01_OpenAppTest extends SetCapabilitiesForTests {
+public class TC_01_SplashScreenTest extends SetCapabilitiesForTests {
 
 
     //Opening the app splash screen

@@ -4,6 +4,8 @@ import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.Test;
 
+import java.util.concurrent.TimeUnit;
+
 public class TC_03_SelectBinocularScopeTest extends TC_02_AcceptPermissions{
     @Test
     public void AssertBinocularText(){
@@ -18,8 +20,10 @@ public class TC_03_SelectBinocularScopeTest extends TC_02_AcceptPermissions{
         binocular.clickOnBinocularScope();
     }
 
+    //Record Audio Permission
     @Test
-    public void adas(){
-        throw new SkipException("Skipping this TestCase as scope is already selected");
+    public void RecordAudioPermission(){
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        recordAudio.acceptRecordPhoneSkopePermission();
     }
 }

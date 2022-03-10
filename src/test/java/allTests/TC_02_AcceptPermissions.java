@@ -4,10 +4,10 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class TC_02_AcceptPermissions extends TC_01_OpenAppTest{
+public class TC_02_AcceptPermissions extends TC_01_SplashScreenTest {
     //Accepting the Record & Photo Capture Permission
     @Test
-    public void capturePhotoAndVideo(){
+    public void capturePhotoAndVideoPermission(){
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         try{
             appPermission.acceptPhotoRecordPermission();
@@ -20,7 +20,7 @@ public class TC_02_AcceptPermissions extends TC_01_OpenAppTest{
 
     //Accepting the Access Local Storage Media Permission
     @Test
-    public void AccessLocalStorageMedia(){
+    public void AccessLocalStorageMediaPermission(){
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         try{
             accessMedia.getLocalMediaPermission();
@@ -30,4 +30,6 @@ public class TC_02_AcceptPermissions extends TC_01_OpenAppTest{
             e.getStackTrace();
         }
     }
+
+
 }

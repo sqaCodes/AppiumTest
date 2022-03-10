@@ -2,14 +2,19 @@ package allTests;
 
 import appPermissions.AccessLocalStorageMediaPermission;
 import appPermissions.PhotoAndRecordPermission;
+import appPermissions.RecordAudio;
 import cameraScreen.VerifyCameraScreen;
+import imageCapture.TakePhoto;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import openApp.OpenPhoneScopeApp;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import recordVideo.VideoRecording;
 import scopeSelection.RifleScope;
 import scopeSelection.SpottingScopeBinoculars;
+import switchPhotoAndVideoCamera.VideoAndPhotoCameraSwitch;
 
 import java.net.URL;
 
@@ -20,6 +25,11 @@ public class SetCapabilitiesForTests {
     protected SpottingScopeBinoculars binocular ;
     protected RifleScope rifleScope;
     protected VerifyCameraScreen verifyCameraScreen;
+    protected OpenPhoneScopeApp openApp;
+    protected RecordAudio recordAudio;
+    protected TakePhoto takePhoto;
+    protected VideoRecording videoRecording;
+    protected VideoAndPhotoCameraSwitch cameraSwitch;
 
     public AppiumDriver driver;
     DesiredCapabilities cap = new DesiredCapabilities();
@@ -52,6 +62,11 @@ public class SetCapabilitiesForTests {
         rifleScope = new RifleScope(driver);
         binocular = new SpottingScopeBinoculars(driver);
         verifyCameraScreen = new VerifyCameraScreen(driver);
+        openApp = new OpenPhoneScopeApp(driver);
+        recordAudio = new RecordAudio(driver);
+        videoRecording = new VideoRecording(driver);
+        takePhoto = new TakePhoto(driver);
+        cameraSwitch = new VideoAndPhotoCameraSwitch(driver);
     }
 
     @AfterClass
